@@ -6,6 +6,6 @@ terraform {
   backend "s3" {}
 }
 
-variable "cloudfront_zone_id" {
-  default = "Z33AYJ8TM3BH4J"
+locals {
+  cloudfront_zone_id = "Z33AYJ8TM3BH4J"
 }
