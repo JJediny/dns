@@ -62,7 +62,7 @@ resource "aws_route53_record" "18f_gov_star_18f_gov_a" {
   type = "A"
   alias {
     name = "dualstack.cf-elb-elb-155eqjkdtn55i-611685241.us-east-1.elb.amazonaws.com."
-    zone_id = "Z35SXDOTRQ7X7K"
+    zone_id = "${local.cloud_gov_elb_zone_id}"
     evaluate_target_health = false
   }
 }
@@ -640,7 +640,7 @@ resource "aws_route53_record" "18f_gov_grafana_18f_gov_a" {
   type = "A"
   alias {
     name = "dualstack.18f-grafana-1906882244.us-east-1.elb.amazonaws.com."
-    zone_id = "Z35SXDOTRQ7X7K"
+    zone_id = "${local.cloud_gov_elb_zone_id}"
     evaluate_target_health = false
   }
 }
@@ -651,7 +651,7 @@ resource "aws_route53_record" "18f_gov_green_18f_gov_a" {
   type = "A"
   alias {
     name = "dualstack.cf-green-elb-1b9dvw4o0ubi0-1450531403.us-east-1.elb.amazonaws.com."
-    zone_id = "Z35SXDOTRQ7X7K"
+    zone_id = "${local.cloud_gov_elb_zone_id}"
     evaluate_target_health = false
   }
 }
@@ -670,7 +670,7 @@ resource "aws_route53_record" "18f_gov_star_green_18f_gov_a" {
   type = "A"
   alias {
     name = "dualstack.cf-green-elb-1b9dvw4o0ubi0-1450531403.us-east-1.elb.amazonaws.com."
-    zone_id = "Z35SXDOTRQ7X7K"
+    zone_id = "${local.cloud_gov_elb_zone_id}"
     evaluate_target_health = false
   }
 }
@@ -681,12 +681,12 @@ resource "aws_route53_record" "18f_gov_star_apps_green_18f_gov_a" {
   type = "A"
   alias {
     name = "dualstack.cf-green-elb-1b9dvw4o0ubi0-1450531403.us-east-1.elb.amazonaws.com."
-    zone_id = "Z35SXDOTRQ7X7K"
+    zone_id = "${local.cloud_gov_elb_zone_id}"
     evaluate_target_health = false
   }
 }
 
-  resource "aws_route53_record" "18f_gov_grouplet-playbook_18f_gov_a" {
+resource "aws_route53_record" "18f_gov_grouplet-playbook_18f_gov_a" {
   zone_id = "${aws_route53_zone.18f_gov_zone.zone_id}"
   name = "grouplet-playbook.18f.gov."
   type = "A"
@@ -703,7 +703,7 @@ resource "aws_route53_record" "18f_gov_star_sys_green_18f_gov_a" {
   type = "A"
   alias {
     name = "dualstack.cf-green-elb-1b9dvw4o0ubi0-1450531403.us-east-1.elb.amazonaws.com."
-    zone_id = "Z35SXDOTRQ7X7K"
+    zone_id = "${local.cloud_gov_elb_zone_id}"
     evaluate_target_health = false
   }
 }
@@ -787,7 +787,6 @@ resource "aws_route53_record" "18f_gov_join_18f_gov_cname" {
   records = ["dpjnqahvua4qy.cloudfront.net"]
 }
 
-
 resource "aws_route53_record" "18f_gov_lean-product-design_18f_gov_a" {
   zone_id = "${aws_route53_zone.18f_gov_zone.zone_id}"
   name = "lean-product-design.18f.gov."
@@ -798,7 +797,6 @@ resource "aws_route53_record" "18f_gov_lean-product-design_18f_gov_a" {
     evaluate_target_health = false
   }
 }
-
 
 resource "aws_route53_record" "18f_gov_methods_18f_gov_a" {
   zone_id = "${aws_route53_zone.18f_gov_zone.zone_id}"
@@ -945,7 +943,7 @@ resource "aws_route53_record" "18f_gov_openopps-staging_18f_gov_a" {
   type = "A"
   alias {
     name = "dualstack.cf-elb-elb-155eqjkdtn55i-611685241.us-east-1.elb.amazonaws.com."
-    zone_id = "Z35SXDOTRQ7X7K"
+    zone_id = "${local.cloud_gov_elb_zone_id}"
     evaluate_target_health = false
   }
 }
@@ -980,7 +978,7 @@ resource "aws_route53_record" "18f_gov_openopps-test_18f_gov_a" {
   type = "A"
   alias {
     name = "dualstack.cf-elb-elb-155eqjkdtn55i-611685241.us-east-1.elb.amazonaws.com."
-    zone_id = "Z35SXDOTRQ7X7K"
+    zone_id = "${local.cloud_gov_elb_zone_id}"
     evaluate_target_health = false
   }
 }

@@ -1,17 +1,13 @@
 locals {
   cloudfoundry_elb_logging_development = "dualstack.development-CloudFoundry-Logging-1588361105.us-gov-west-1.elb.amazonaws.com"
-
   cloudfoundry_elb_logging_staging = "dualstack.staging-CloudFoundry-Logging-538826588.us-gov-west-1.elb.amazonaws.com"
-
   cloudfoundry_elb_logging_production = "dualstack.production-CloudFoundry-Logging-910586631.us-gov-west-1.elb.amazonaws.com"
 
-
   elb_prometheus_staging = "dualstack.staging-Prometheus-658384006.us-gov-west-1.elb.amazonaws.com"
-
   elb_prometheus_production = "dualstack.production-Prometheus-1971082399.us-gov-west-1.elb.amazonaws.com"
 
-
   cloud_gov_cloudfront_zone_id = "Z2FDTNDATAQYW2"
+  cloud_gov_elb_zone_id = "Z35SXDOTRQ7X7K"
 }
 
 resource "aws_route53_zone" "cloud_gov_zone" {
