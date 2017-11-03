@@ -1,4 +1,5 @@
 locals {
+  cloud_gov_cloudfront = "d2vy872d33xc5d.cloudfront.net"
   cloud_gov_green_elb = "dualstack.cf-green-elb-1b9dvw4o0ubi0-1450531403.us-east-1.elb.amazonaws.com."
 
   cloudfoundry_elb_logging_development = "dualstack.development-CloudFoundry-Logging-1588361105.us-gov-west-1.elb.amazonaws.com"
@@ -24,7 +25,7 @@ resource "aws_route53_record" "cloud_gov_cloud_gov_a" {
   name = "cloud.gov."
   type = "A"
   alias {
-    name = "d2vy872d33xc5d.cloudfront.net."
+    name = "${local.cloud_gov_cloudfront}."
     zone_id = "${local.cloud_gov_cloudfront_zone_id}"
     evaluate_target_health = false
   }
@@ -35,7 +36,7 @@ resource "aws_route53_record" "cloud_gov_cloud_gov_aaaa" {
   name = "cloud.gov."
   type = "AAAA"
   alias {
-    name = "d2vy872d33xc5d.cloudfront.net."
+    name = "${local.cloud_gov_cloudfront}."
     zone_id = "${local.cloud_gov_cloudfront_zone_id}"
     evaluate_target_health = false
   }
@@ -745,7 +746,7 @@ resource "aws_route53_record" "cloud_gov_www_cloud_gov_cname" {
   name = "www.cloud.gov."
   type = "CNAME"
   ttl = 60
-  records = ["d2vy872d33xc5d.cloudfront.net."]
+  records = ["${local.cloud_gov_cloudfront}."]
 }
 
 resource "aws_route53_record" "cdn_broker_delegate" {
