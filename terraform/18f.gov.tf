@@ -650,7 +650,7 @@ resource "aws_route53_record" "18f_gov_green_18f_gov_a" {
   name = "green.18f.gov."
   type = "A"
   alias {
-    name = "dualstack.cf-green-elb-1b9dvw4o0ubi0-1450531403.us-east-1.elb.amazonaws.com."
+    name = "${local.cloud_gov_green_elb}"
     zone_id = "${local.cloud_gov_elb_zone_id}"
     evaluate_target_health = false
   }
@@ -669,7 +669,7 @@ resource "aws_route53_record" "18f_gov_star_green_18f_gov_a" {
   name = "*.green.18f.gov."
   type = "A"
   alias {
-    name = "dualstack.cf-green-elb-1b9dvw4o0ubi0-1450531403.us-east-1.elb.amazonaws.com."
+    name = "${local.cloud_gov_green_elb}"
     zone_id = "${local.cloud_gov_elb_zone_id}"
     evaluate_target_health = false
   }
@@ -680,7 +680,7 @@ resource "aws_route53_record" "18f_gov_star_apps_green_18f_gov_a" {
   name = "*.apps.green.18f.gov."
   type = "A"
   alias {
-    name = "dualstack.cf-green-elb-1b9dvw4o0ubi0-1450531403.us-east-1.elb.amazonaws.com."
+    name = "${local.cloud_gov_green_elb}"
     zone_id = "${local.cloud_gov_elb_zone_id}"
     evaluate_target_health = false
   }
@@ -702,7 +702,7 @@ resource "aws_route53_record" "18f_gov_star_sys_green_18f_gov_a" {
   name = "*.sys.green.18f.gov."
   type = "A"
   alias {
-    name = "dualstack.cf-green-elb-1b9dvw4o0ubi0-1450531403.us-east-1.elb.amazonaws.com."
+    name = "${local.cloud_gov_green_elb}"
     zone_id = "${local.cloud_gov_elb_zone_id}"
     evaluate_target_health = false
   }

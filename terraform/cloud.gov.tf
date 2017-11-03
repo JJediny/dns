@@ -1,4 +1,6 @@
 locals {
+  cloud_gov_green_elb = "dualstack.cf-green-elb-1b9dvw4o0ubi0-1450531403.us-east-1.elb.amazonaws.com."
+
   cloudfoundry_elb_logging_development = "dualstack.development-CloudFoundry-Logging-1588361105.us-gov-west-1.elb.amazonaws.com"
   cloudfoundry_elb_logging_staging = "dualstack.staging-CloudFoundry-Logging-538826588.us-gov-west-1.elb.amazonaws.com"
   cloudfoundry_elb_logging_production = "dualstack.production-CloudFoundry-Logging-910586631.us-gov-west-1.elb.amazonaws.com"
