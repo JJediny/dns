@@ -9,6 +9,9 @@ locals {
   elb_prometheus_staging = "dualstack.staging-Prometheus-658384006.us-gov-west-1.elb.amazonaws.com"
 
   elb_prometheus_production = "dualstack.production-Prometheus-1971082399.us-gov-west-1.elb.amazonaws.com"
+
+
+  cloud_gov_cloudfront_zone_id = "Z2FDTNDATAQYW2"
 }
 
 resource "aws_route53_zone" "cloud_gov_zone" {
@@ -24,7 +27,7 @@ resource "aws_route53_record" "cloud_gov_cloud_gov_a" {
   type = "A"
   alias {
     name = "d2vy872d33xc5d.cloudfront.net."
-    zone_id = "Z2FDTNDATAQYW2"
+    zone_id = "${local.cloud_gov_cloudfront_zone_id}"
     evaluate_target_health = false
   }
 }
@@ -35,7 +38,7 @@ resource "aws_route53_record" "cloud_gov_cloud_gov_aaaa" {
   type = "AAAA"
   alias {
     name = "d2vy872d33xc5d.cloudfront.net."
-    zone_id = "Z2FDTNDATAQYW2"
+    zone_id = "${local.cloud_gov_cloudfront_zone_id}"
     evaluate_target_health = false
   }
 }
