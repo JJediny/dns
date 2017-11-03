@@ -46,7 +46,7 @@ resource "aws_route53_record" "cloud_gov_cloud_gov_mx" {
   name = "cloud.gov."
   type = "MX"
   ttl = 300
-  records = ["10 30288227.in1.mandrillapp.com", "20 30288227.in2.mandrillapp.com"]
+  records = ["${local.mandrill_mx}"]
 }
 
 resource "aws_route53_record" "cloud_gov_cloud_gov_txt" {
