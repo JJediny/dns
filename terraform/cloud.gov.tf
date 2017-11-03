@@ -80,7 +80,7 @@ resource "aws_route53_record" "cloud_gov_mandrill__domainkey_cloud_gov_txt" {
   name = "mandrill._domainkey.cloud.gov."
   type = "TXT"
   ttl = 300
-  records = ["v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrLHiExVd55zd/IQ/J/mRwSRMAocV/hMB3jXwaHH36d9NaVynQFYV8NaWi69c1veUtRzGt7yAioXqLj7Z4TeEUoOLgrKsn8YnckGs9i3B3tVFB+Ch/4mPhXWiNfNdynHWBcPcbJ8kjEQ2U8y78dHZj1YeRXXVvWob2OaKynO8/lQIDAQAB;"]
+  records = ["${local.mandrill_dkim}"]
 }
 
 resource "aws_route53_record" "cloud_gov_community_cloud_gov_cname" {

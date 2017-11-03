@@ -29,7 +29,7 @@ resource "aws_route53_record" "apps_gov_apps_gov_txt" {
   name = "apps.gov."
   type = "TXT"
   ttl = 60
-  records = ["v=spf1 include:spf.mandrillapp.com ?all"]
+  records = ["${local.mandrill_spf}"]
 }
 
 resource "aws_route53_record" "apps_gov_7020370b93980d607416a29297f68e3b_apps_gov_cname" {
@@ -61,7 +61,7 @@ resource "aws_route53_record" "apps_gov_mandrill__domainkey_apps_gov_txt" {
   name = "mandrill._domainkey.apps.gov."
   type = "TXT"
   ttl = 60
-  records = ["v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrLHiExVd55zd/IQ/J/mRwSRMAocV/hMB3jXwaHH36d9NaVynQFYV8NaWi69c1veUtRzGt7yAioXqLj7Z4TeEUoOLgrKsn8YnckGs9i3B3tVFB+Ch/4mPhXWiNfNdynHWBcPcbJ8kjEQ2U8y78dHZj1YeRXXVvWob2OaKynO8/lQIDAQAB;"]
+  records = ["${local.mandrill_dkim}"]
 }
 
 resource "aws_route53_record" "apps_gov_nmhy3ybmnflrc262ad44iiydvn2iptrw__domainkey_apps_gov_cname" {

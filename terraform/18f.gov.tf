@@ -29,7 +29,7 @@ resource "aws_route53_record" "18f_gov_18f_gov_txt" {
   name = "18f.gov."
   type = "TXT"
   ttl = 300
-  records = ["v=spf1 include:spf.mandrillapp.com ?all"]
+  records = ["${local.mandrill_spf}"]
 }
 
 resource "aws_route53_record" "18f_gov_01326251e4e9fc611488dd6bceaeba90_18f_gov_cname" {
@@ -96,7 +96,7 @@ resource "aws_route53_record" "18f_gov_mandrill__domainkey_18f_gov_txt" {
   name = "mandrill._domainkey.18f.gov."
   type = "TXT"
   ttl = 300
-  records = ["v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrLHiExVd55zd/IQ/J/mRwSRMAocV/hMB3jXwaHH36d9NaVynQFYV8NaWi69c1veUtRzGt7yAioXqLj7Z4TeEUoOLgrKsn8YnckGs9i3B3tVFB+Ch/4mPhXWiNfNdynHWBcPcbJ8kjEQ2U8y78dHZj1YeRXXVvWob2OaKynO8/lQIDAQAB;"]
+  records = ["${local.mandrill_dkim}"]
 }
 
 resource "aws_route53_record" "18f_gov_qegrzvzekq4wiompgqufe4xwmarm37lh__domainkey_18f_gov_cname" {
@@ -311,7 +311,7 @@ resource "aws_route53_record" "18f_gov_c2_18f_gov_txt" {
   name = "c2.18f.gov."
   type = "TXT"
   ttl = 60
-  records = ["v=spf1 include:spf.mandrillapp.com ?all"]
+  records = ["${local.mandrill_spf}"]
 }
 
 resource "aws_route53_record" "18f_gov_mandrill__domainkey_c2_18f_gov_txt" {
@@ -319,7 +319,7 @@ resource "aws_route53_record" "18f_gov_mandrill__domainkey_c2_18f_gov_txt" {
   name = "mandrill._domainkey.c2.18f.gov."
   type = "TXT"
   ttl = 60
-  records = ["v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrLHiExVd55zd/IQ/J/mRwSRMAocV/hMB3jXwaHH36d9NaVynQFYV8NaWi69c1veUtRzGt7yAioXqLj7Z4TeEUoOLgrKsn8YnckGs9i3B3tVFB+Ch/4mPhXWiNfNdynHWBcPcbJ8kjEQ2U8y78dHZj1YeRXXVvWob2OaKynO8/lQIDAQAB;"]
+  records = ["${local.mandrill_dkim}"]
 }
 
 resource "aws_route53_record" "18f_gov_c6769c03c29466618a6bd23b158d28a6_18f_gov_cname" {
@@ -835,7 +835,7 @@ resource "aws_route53_record" "18f_gov_micropurchase-staging_18f_gov_txt" {
   name = "micropurchase-staging.18f.gov."
   type = "TXT"
   ttl = 300
-  records = ["v=spf1 include:spf.mandrillapp.com ?all"]
+  records = ["${local.mandrill_spf}"]
 }
 
 resource "aws_route53_record" "18f_gov_mandrill__domainkey_micropurchase-staging_18f_gov_txt" {
@@ -843,7 +843,7 @@ resource "aws_route53_record" "18f_gov_mandrill__domainkey_micropurchase-staging
   name = "mandrill._domainkey.micropurchase-staging.18f.gov."
   type = "TXT"
   ttl = 300
-  records = ["v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrLHiExVd55zd/IQ/J/mRwSRMAocV/hMB3jXwaHH36d9NaVynQFYV8NaWi69c1veUtRzGt7yAioXqLj7Z4TeEUoOLgrKsn8YnckGs9i3B3tVFB+Ch/4mPhXWiNfNdynHWBcPcbJ8kjEQ2U8y78dHZj1YeRXXVvWob2OaKynO8/lQIDAQAB;"]
+  records = ["${local.mandrill_dkim}"]
 }
 
 # Configured with CDN Broker
@@ -871,7 +871,7 @@ resource "aws_route53_record" "18f_gov_micropurchase_18f_gov_txt" {
   name = "micropurchase.18f.gov."
   type = "TXT"
   ttl = 300
-  records = ["v=spf1 include:spf.mandrillapp.com ?all"]
+  records = ["${local.mandrill_spf}"]
 }
 
 resource "aws_route53_record" "18f_gov_mandrill__domainkey_micropurchase_18f_gov_txt" {
@@ -879,7 +879,7 @@ resource "aws_route53_record" "18f_gov_mandrill__domainkey_micropurchase_18f_gov
   name = "mandrill._domainkey.micropurchase.18f.gov."
   type = "TXT"
   ttl = 300
-  records = ["v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrLHiExVd55zd/IQ/J/mRwSRMAocV/hMB3jXwaHH36d9NaVynQFYV8NaWi69c1veUtRzGt7yAioXqLj7Z4TeEUoOLgrKsn8YnckGs9i3B3tVFB+Ch/4mPhXWiNfNdynHWBcPcbJ8kjEQ2U8y78dHZj1YeRXXVvWob2OaKynO8/lQIDAQAB;"]
+  records = ["${local.mandrill_dkim}"]
 }
 
 resource "aws_route53_record" "18f_gov_modularcontracting_18f_gov_a" {
@@ -963,7 +963,7 @@ resource "aws_route53_record" "18f_gov_openopps-staging_18f_gov_txt" {
   name = "openopps-staging.18f.gov."
   type = "TXT"
   ttl = 300
-  records = ["v=spf1 include:spf.mandrillapp.com ?all"]
+  records = ["${local.mandrill_spf}"]
 }
 
 resource "aws_route53_record" "18f_gov_mandrill__domainkey_openopps-staging_18f_gov_txt" {
@@ -971,7 +971,7 @@ resource "aws_route53_record" "18f_gov_mandrill__domainkey_openopps-staging_18f_
   name = "mandrill._domainkey.openopps-staging.18f.gov."
   type = "TXT"
   ttl = 300
-  records = ["v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrLHiExVd55zd/IQ/J/mRwSRMAocV/hMB3jXwaHH36d9NaVynQFYV8NaWi69c1veUtRzGt7yAioXqLj7Z4TeEUoOLgrKsn8YnckGs9i3B3tVFB+Ch/4mPhXWiNfNdynHWBcPcbJ8kjEQ2U8y78dHZj1YeRXXVvWob2OaKynO8/lQIDAQAB;"]
+  records = ["${local.mandrill_dkim}"]
 }
 
 resource "aws_route53_record" "18f_gov_openopps-test_18f_gov_a" {
@@ -998,7 +998,7 @@ resource "aws_route53_record" "18f_gov_openopps-test_18f_gov_txt" {
   name = "openopps-test.18f.gov."
   type = "TXT"
   ttl = 300
-  records = ["v=spf1 include:spf.mandrillapp.com ?all"]
+  records = ["${local.mandrill_spf}"]
 }
 
 resource "aws_route53_record" "18f_gov_mandrill__domainkey_openopps-test_18f_gov_txt" {
@@ -1006,7 +1006,7 @@ resource "aws_route53_record" "18f_gov_mandrill__domainkey_openopps-test_18f_gov
   name = "mandrill._domainkey.openopps-test.18f.gov."
   type = "TXT"
   ttl = 300
-  records = ["v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrLHiExVd55zd/IQ/J/mRwSRMAocV/hMB3jXwaHH36d9NaVynQFYV8NaWi69c1veUtRzGt7yAioXqLj7Z4TeEUoOLgrKsn8YnckGs9i3B3tVFB+Ch/4mPhXWiNfNdynHWBcPcbJ8kjEQ2U8y78dHZj1YeRXXVvWob2OaKynO8/lQIDAQAB;"]
+  records = ["${local.mandrill_dkim}"]
 }
 
 resource "aws_route53_record" "18f_gov_pages_18f_gov_cname" {
@@ -1096,7 +1096,7 @@ resource "aws_route53_record" "18f_gov_requests_18f_gov_txt" {
   name = "requests.18f.gov."
   type = "TXT"
   ttl = 300
-  records = ["v=spf1 include:spf.mandrillapp.com ?all"]
+  records = ["${local.mandrill_spf}"]
 }
 
 resource "aws_route53_record" "18f_gov_mandrill__domainkey_requests_18f_gov_txt" {
@@ -1104,7 +1104,7 @@ resource "aws_route53_record" "18f_gov_mandrill__domainkey_requests_18f_gov_txt"
   name = "mandrill._domainkey.requests.18f.gov."
   type = "TXT"
   ttl = 300
-  records = ["v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrLHiExVd55zd/IQ/J/mRwSRMAocV/hMB3jXwaHH36d9NaVynQFYV8NaWi69c1veUtRzGt7yAioXqLj7Z4TeEUoOLgrKsn8YnckGs9i3B3tVFB+Ch/4mPhXWiNfNdynHWBcPcbJ8kjEQ2U8y78dHZj1YeRXXVvWob2OaKynO8/lQIDAQAB;"]
+  records = ["${local.mandrill_dkim}"]
 }
 
 resource "aws_route53_record" "18f_gov_slides_18f_gov_a" {
